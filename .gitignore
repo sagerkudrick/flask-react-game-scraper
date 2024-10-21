@@ -1,4 +1,5 @@
 .venv
+venv
 __pycache__
 instance
 backend/instance
