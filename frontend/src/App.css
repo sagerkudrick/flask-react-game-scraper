@@ -1,0 +1,27 @@
+.card-list-container {
+    display: flex;
+  justify-content: center;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.header-title {
+  margin-bottom: 10px; /* Add space between title and buttons */
+}
+
+.header h1 {
+  margin: 0; /* Remove default margin */
+}
+
+.header-buttons {
+  display: flex; /* Make the buttons flex items */
+}
+
+.header-buttons button {
+  margin: 0 10px; /* Add some spacing between buttons */
+}
