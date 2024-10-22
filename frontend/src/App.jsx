@@ -72,7 +72,7 @@ function App() {
           <button onClick={() => updateFilter("false")}>Paid Cards</button>
         </div>
       </div>
-      <div className='card-list-container'>
+      <div className='card-grid'>
         <CardList cards={cards} updateCard={openEditModal} deleteCard={openDeleteModal} updateCallback={onUpdate} />
       </div>
       {isModalOpen && (

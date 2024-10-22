@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import "./CardForm.css"; // Import the CSS file
+import "./DeleteForm.css"; // Import the CSS file
 
 const DeleteForm = ({ existingCard = {}, updateCallback }) => {
     const [title, setCardName] = useState(existingCard.title || "")

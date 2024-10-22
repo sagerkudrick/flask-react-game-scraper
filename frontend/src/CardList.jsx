@@ -1,11 +1,11 @@
 import React from "react";
-import "./CardForm.css"; // Import the CSS file
+import "./CardList.css"; // Import the CSS file
 
 const CardList = ({ cards, updateCard, deleteCard }) => {
 
   return (
     <div>
-      <div className="card-list">
+      <div className="card-grid">
         {cards.map((card) => {
           // Convert date string to a Date object
           const date = new Date(card.date_created);
@@ -15,21 +15,40 @@ const CardList = ({ cards, updateCard, deleteCard }) => {
           const free = card.is_free;
 
           return (
-            <div key={card.id} className="card-container">
-              <img src={"./images/game.PNG"} alt={card.title} className="card-image" />
-              <div className="card-content">
-                <h2 className="card-title">{card.title}</h2>
-                <p className="card-description">{card.description}</p>
-                <div className="card-actions">
+
+      <div class="card-container">
+        <a href="/" class="hero-image-container">
+          <img class="hero-image" src={"./images/game.PNG"} alt={card.title}/>
+        </a>
+        <main class="main-content">
+          <h1><a href="#">{card.title}</a></h1>
+          <p>{card.description}</p>
+
+          <div class="flex-row">
+            <div class="coin-base">
+              
+          <div className="card-info">
+            <p className="card-free" style={{ backgroundColor: free ? '#007bff' : '#dc3545' }}>{free ? 'Free' : 'Paid'}</p>
+          </div>
+
+            </div>
+            <div class="time-left">
+              <img src="https://i.postimg.cc/prpyV4mH/clock-selection-no-bg.png" alt="clock" class="small-image"/>
+              <p>{formattedDate}</p>
+              
+            </div>
+            
+          </div>
+        </main>
+        <div class="card-attribute">
+
+          <div className="card-actions">
                   <button onClick={() => updateCard(card)}>Update</button>
                   <button onClick={() => deleteCard(card)}>Delete</button>
                 </div>
-                <div className="card-info">
-                  <p className="card-free" style={{ backgroundColor: free ? '#007bff' : '#dc3545' }}>{free ? 'Free' : 'Paid'}</p>
-                  <p className="card-date">{formattedDate}</p>
-                </div>
-              </div>
-            </div>
+
+        </div>
+      </div>
           );
         })}
       </div>
