@@ -41,6 +41,7 @@ const CardForm = ({ existingCard = {}, updateCallback }) => {
 
     return (
         <form onSubmit={onSubmit}>
+            <div className="card-modal-backdrop">
             <div className="card-modal">
                 <label htmlFor="cardName">Card Name:</label>
                 <input 
@@ -65,6 +66,7 @@ const CardForm = ({ existingCard = {}, updateCallback }) => {
                     checked={is_free} 
                     onChange={(e) => setCardIsFree(e.target.checked)}
                 />
+            </div>
             </div>
             <button type="submit">{cardUpdating ? "Update" : "Create"}</button>
         </form>
